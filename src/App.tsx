@@ -4,7 +4,7 @@ import { MonitorStore } from './components/MonitorStore'
 function App() {
   return (
     <div className='App'>
-      <MonitorStore storeName="Joe's Monitors" />
+      <MonitorStore storeName="Rick's Monitors" />
     </div>
   )
 }
