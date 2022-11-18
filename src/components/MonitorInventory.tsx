@@ -1,6 +1,11 @@
-type MonitorInventoryProps = {}
+import { MonitorType } from "../types/Monitor"
 
-export const MonitorInventory: React.FC<MonitorInventoryProps> = () => {
+type MonitorInventoryProps = {monitors: MonitorType[]}
+
+
+export const MonitorInventory: React.FC<MonitorInventoryProps> = ({monitors}) => {
+
+
   return (
     <>
       <br />
@@ -16,20 +21,14 @@ export const MonitorInventory: React.FC<MonitorInventoryProps> = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>P1234</td>
-            <td>HP</td>
-            <td>25</td>
-            <td>120.00</td>
-            <td>30</td>
-          </tr>
-          <tr>
-            <td>P4321</td>
-            <td>Lenovo</td>
-            <td>21</td>
-            <td>100.00</td>
-            <td>50</td>
-          </tr>
+          {monitors.map((monitor: MonitorType) => <tr>
+            <td>{monitor.productNumber}</td>
+            <td>{monitor.brand}</td>
+            <td>{monitor.screenSize}</td>
+            <td>{monitor.price}</td>
+            <td>{monitor.quantity}</td>
+          </tr>)}
+          
         </tbody>
       </table>
 
